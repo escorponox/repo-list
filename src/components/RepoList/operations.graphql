@@ -1,0 +1,11 @@
+fragment RepoListItemFragment on Repo {
+  id
+  name
+  full_name
+}
+
+query userRepos($userReposInput: UserReposInput) {
+  userRepos(userReposInput: $userReposInput) {
+    ...RepoListItemFragment
+  }
+}

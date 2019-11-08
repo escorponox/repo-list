@@ -1,0 +1,13 @@
+fragment UserFragment on User {
+  id
+  login
+  email
+  avatar_url
+  html_url
+}
+
+query getUser {
+  user {
+    ...UserFragment
+  }
+}

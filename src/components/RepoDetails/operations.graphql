@@ -1,0 +1,26 @@
+fragment RepoDetailFragment on Repo {
+  id
+  name
+  full_name
+  description
+  private
+  html_url
+  fork
+}
+
+fragment RepoPullFragment on PullRequest {
+  id
+  title
+  number
+  html_url
+  state
+}
+
+query repoDetail($repoInput: RepoInput!) {
+  repo(repoInput: $repoInput) {
+    ...RepoDetailFragment
+  }
+  repoPulls(repoInput: $repoInput) {
+    ...RepoPullFragment
+  }
+}

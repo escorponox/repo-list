@@ -1,0 +1,41 @@
+{
+  "extends": ["plugin:@typescript-eslint/recommended", "react-app", "prettier", "prettier/react"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "import", "babel", "emotion", "cypress"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.common.js"
+      }
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-console": "off",
+    "emotion/jsx-import": "off",
+    "emotion/no-vanilla": "error",
+    "emotion/import-from-emotion": "error",
+    "emotion/styled-import": "error",
+    "no-unused-vars": [
+      "warn",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+      }
+    ]
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "cypress/globals": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": false,
+    "codeFrame": false
+  }
+}
